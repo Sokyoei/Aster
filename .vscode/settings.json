@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.m": "matlab",
+        ".editorconfig": "editorconfig",
+        "*.cppm": "cpp",
+        "*.cuf": "FortranFreeForm",
+        ".clang-format": "yaml",
+        ".clang-tidy": "yaml",
+        "qcoreapplication": "cpp",
+        "qapplication": "cpp",
+        "iostream": "cpp"
+    }
+}
