@@ -12,5 +12,7 @@
 #cmakedefine USE_Qt5
 #cmakedefine USE_FFMPEG
 #cmakedefine USE_IMGUI
+#cmakedefine USE_GLAD
+#cmakedefine USE_GLFW3
 
 #endif  // !CONFIG_H

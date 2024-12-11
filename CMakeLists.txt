@@ -23,6 +23,7 @@ include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)
 option(FFmpeg "build ffmpeg_learn subproject" ON)
 option(Qt "build qt_learn subproject" ON)
 option(ImGui "build imgui_learn subproject" ON)
+option(OpenGL "build opengl_learn subproject" ON)
 
 if(FFmpeg)
     if(FFMPEG_FOUND)
@@ -41,6 +42,16 @@ if(ImGui)
         add_subdirectory(imgui_learn)
     endif(imgui_FOUND)
 endif(ImGui)
+
+if(OpenGL)
+    if((glad_FOUND) AND (glfw3_FOUND))
+        add_subdirectory(opengl_learn)
+    endif((glad_FOUND) AND (glfw3_FOUND))
+endif(OpenGL)
+
+if(WIN32)
+    add_subdirectory(DirectX_learn)
+endif(WIN32)
 
 # config.h settings
 configure_file(
