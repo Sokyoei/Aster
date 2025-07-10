@@ -10,6 +10,7 @@
 #cmakedefine USE_TOMLPLUSPLUS
 #cmakedefine USE_TINYXML2
 #cmakedefine USE_Qt5
+#cmakedefine USE_Qt6
 #cmakedefine USE_FFMPEG
 #cmakedefine USE_IMGUI
 #cmakedefine USE_GLAD

@@ -63,10 +63,20 @@ if(FFMPEG_FOUND)
     set(USE_FFMPEG true)
 endif(FFMPEG_FOUND)
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+# QT5 or QT6
+# QT moc uic rcc
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Gui Widgets Multimedia MultimediaWidgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Widgets Multimedia MultimediaWidgets)
 if(Qt5_FOUND)
     set(USE_Qt5 true)
 endif(Qt5_FOUND)
+if(Qt6_FOUND)
+    set(USE_Qt6 true)
+endif(Qt6_FOUND)
 
 find_package(imgui CONFIG)
 # target_link_libraries(main PRIVATE imgui::imgui)

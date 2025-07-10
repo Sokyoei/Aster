@@ -1,0 +1,7 @@
+add_executable(Aster main.cpp camera.hpp camera.cpp)
+target_link_libraries(Aster PRIVATE opencv_core)
+target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
+target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Multimedia)
+target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::MultimediaWidgets)

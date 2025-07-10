@@ -5,11 +5,6 @@ project(Aster VERSION 0.0.1 LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD 20)
 
-# QT moc uic rcc
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTORCC ON)
-
 add_compile_definitions(AHRI_EXPORT)
 # add_definitions(-DAHRI_EXPORT)
 
@@ -32,9 +27,9 @@ if(FFmpeg)
 endif(FFmpeg)
 
 if(Qt)
-    if(Qt5_FOUND)
+    if(Qt${QT_VERSION_MAJOR}_FOUND)
         add_subdirectory(qt_learn)
-    endif(Qt5_FOUND)
+    endif(Qt${QT_VERSION_MAJOR}_FOUND)
 endif(Qt)
 
 if(ImGui)
@@ -52,6 +47,8 @@ endif(OpenGL)
 if(WIN32)
     add_subdirectory(DirectX_learn)
 endif(WIN32)
+
+add_subdirectory(src)
 
 # config.h settings
 configure_file(
