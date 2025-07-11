@@ -63,6 +63,11 @@ if(FFMPEG_FOUND)
     set(USE_FFMPEG true)
 endif(FFMPEG_FOUND)
 
+find_package(OpenCV CONFIG)
+if(OpenCV_FOUND)
+    set(USE_OPENCV true)
+endif(OpenCV_FOUND)
+
 # QT5 or QT6
 # QT moc uic rcc
 set(CMAKE_AUTOMOC ON)

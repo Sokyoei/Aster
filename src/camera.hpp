@@ -7,7 +7,7 @@
 #include <opencv2/opencv.hpp>
 
 namespace Ahri {
-class QtCamera : public Qt3DRender::QCamera {
+class QtCamera : public QCamera {
 private:
 public:
     QtCamera();

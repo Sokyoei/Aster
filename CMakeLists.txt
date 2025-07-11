@@ -14,7 +14,9 @@ include(${PROJECT_SOURCE_DIR}/cmake/library.cmake)
 set(ROOT ${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)
 
+########################################################################################################################
 # options
+########################################################################################################################
 option(FFmpeg "build ffmpeg_learn subproject" ON)
 option(Qt "build qt_learn subproject" ON)
 option(ImGui "build imgui_learn subproject" ON)

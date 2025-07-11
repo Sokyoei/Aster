@@ -15,5 +15,6 @@
 #cmakedefine USE_IMGUI
 #cmakedefine USE_GLAD
 #cmakedefine USE_GLFW3
+#cmakedefine USE_OPENCV
 
 #endif  // !CONFIG_H
