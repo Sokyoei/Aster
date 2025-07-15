@@ -9,6 +9,10 @@ file(
 )
 
 add_executable(Aster main.cpp ${ASTER_SOURCE_FILES})
+target_include_directories(Aster PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include")
+target_include_directories(Aster PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src")
+
+qt_create_translation(QM_FILES i18n/Aster_zh_CN.ts)
 
 target_link_libraries(Aster PRIVATE opencv_core)
 target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Core)
