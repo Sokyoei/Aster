@@ -6,6 +6,10 @@
  *
  */
 
+#pragma once
+#ifndef AHRI_FFMPEG_UTILS_HPP
+#define AHRI_FFMPEG_UTILS_HPP
+
 #include <iostream>
 
 extern "C" {
@@ -77,3 +81,5 @@ private:
     AVFormatContext* _context;
 };
 }  // namespace Ahri::FFmpeg
+
+#endif  // !AHRI_FFMPEG_UTILS_HPP

@@ -1,4 +1,6 @@
 <RCC>
-    <qresource prefix="Aster">
+    <qresource prefix="/Ahri/Aster">
+        <file>Aster.ico</file>
+        <file>mainwindow.qss</file>
     </qresource>
 </RCC>

@@ -12,8 +12,6 @@ private:
 public:
     QtCamera();
     ~QtCamera();
-    cv::Mat QImage_to_Mat(QImage& qimage);
-    QImage Mat_to_QImage(cv::Mat& mat);
 };
 
 class IntelRealSenseCamera {};

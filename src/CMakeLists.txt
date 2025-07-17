@@ -6,6 +6,7 @@ file(
     "src/*.cpp"
     "src/*.hpp"
     "ui/*.ui"
+    "assets/*.qrc"
 )
 
 add_executable(Aster main.cpp ${ASTER_SOURCE_FILES})

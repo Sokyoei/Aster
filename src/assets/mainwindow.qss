@@ -1,0 +1,14 @@
+QMainWindow {
+    /* background-color: rgb(255, 85, 127); */
+    /* border-radius: 50%; */
+    /* border-style: solid; */
+    /* border-width: 2px; */
+    /* border-color: rgb(213, 213, 213); */
+}
+
+/* 中心窗口样式 */
+QWidget#centralwidget {
+    background-color: rgb(255, 85, 127);
+    border-radius: 20px;
+    border-color: rgb(213, 213, 213);
+}
