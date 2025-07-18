@@ -45,9 +45,9 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
-             <widget class="QPushButton" name="openButton">
+             <widget class="QPushButton" name="openFileButton">
               <property name="text">
-               <string>open</string>
+               <string>Open File</string>
               </property>
              </widget>
             </item>
@@ -62,10 +62,21 @@
           <widget class="QWidget" name="showwidget" native="true">
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
-             <widget class="QLabel" name="showlabel">
-              <property name="text">
-               <string>TextLabel</string>
-              </property>
+             <widget class="QStackedWidget" name="stackedWidget">
+              <widget class="QWidget" name="picture">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QLabel" name="showlabel"/>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="video">
+               <layout class="QHBoxLayout" name="horizontalLayout_4">
+                <item>
+                 <widget class="QVideoWidget" name="videoWidget" native="true"/>
+                </item>
+               </layout>
+              </widget>
              </widget>
             </item>
            </layout>
@@ -94,9 +105,34 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>qvideowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>openFileButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onOpenFileButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>113</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>164</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
-  <signal>openFile()</signal>
+  <slot>onOpenFileButtonClicked()</slot>
  </slots>
 </ui>

@@ -118,12 +118,14 @@
   <ItemGroup>
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\mainwindow.cpp" />
+    <ClCompile Include="src\videoplayer.cpp" />
     <QtRcc Include="assets\mainwindow.qrc" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="ui\mainwindow.ui" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\camera.hpp" />
+    <ClInclude Include="src\videoplayer.hpp" />
     <QtMoc Include="src\mainwindow.hpp" />
   </ItemGroup>
   <ItemGroup>

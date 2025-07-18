@@ -1,7 +1,14 @@
+#include "Aster.hpp"
+
 #include <QApplication>
 #include <QCamera>
+#ifdef USE_QT5
 #include <QCameraInfo>
 #include <QCameraViewfinder>
+#else defined(USE_QT6)
+#include <QCameraDevice>
+#include <QVideoSink>
+#endif
 #include <QVBoxLayout>
 #include <QWidget>
 
