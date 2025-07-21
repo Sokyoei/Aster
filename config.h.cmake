@@ -17,4 +17,6 @@
 #cmakedefine USE_GLFW3
 #cmakedefine USE_OPENCV
 
+#cmakedefine USE_QTQML
+
 #endif  // !CONFIG_H

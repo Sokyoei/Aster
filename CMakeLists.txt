@@ -17,6 +17,7 @@ include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)
 ########################################################################################################################
 # options
 ########################################################################################################################
+option(AsterQML "Aster project using QML" OFF)  # default is using widget
 option(FFmpeg "build ffmpeg_learn subproject" ON)
 option(Qt "build qt_learn subproject" ON)
 option(ImGui "build imgui_learn subproject" ON)
@@ -50,6 +51,11 @@ if(WIN32)
     add_subdirectory(DirectX_learn)
 endif(WIN32)
 
+# flags to use QML
+if(AsterQML)
+    set(USE_QTQML true)
+    set(QT_QML_GENERATE_QMLLS_INI ON)
+endif(AsterQML)
 add_subdirectory(src)
 
 # config.h settings

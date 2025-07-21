@@ -2,5 +2,6 @@
     <qresource prefix="/Ahri/Aster">
         <file>Aster.ico</file>
         <file>mainwindow.qss</file>
+        <file>mainwindow.qml</file>
     </qresource>
 </RCC>

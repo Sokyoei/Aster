@@ -8,6 +8,7 @@ file(
     "ui/*.ui"
     "assets/*.qrc"
     "assets/*.rc"
+    "assets/*.qml"
 )
 
 add_executable(Aster main.cpp ${ASTER_SOURCE_FILES})
@@ -22,3 +23,7 @@ target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
 target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Multimedia)
 target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::MultimediaWidgets)
+if(USE_QTQML)
+    target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Qml)
+    target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Quick)
+endif(USE_QTQML)
