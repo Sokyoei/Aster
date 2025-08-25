@@ -96,12 +96,12 @@ void MainWindow::onOpenFileButtonClicked() {
 
             // 检查播放状态
 #ifdef USE_QT6
-            connect(meidaplayer, &QMediaPlayer::playbackStateChanged, this, [=](QMediaPlayer::PlaybackState state) {
+            connect(meidaplayer, &QMediaPlayer::playbackStateChanged, this,
+                    [=](QMediaPlayer::PlaybackState state) { qDebug() << "Player state:" << state; });
 #else defined(USE_QT5)
-            connect(meidaplayer, &QMediaPlayer::stateChanged, this, [=](QMediaPlayer::State state) {
+            connect(meidaplayer, &QMediaPlayer::stateChanged, this,
+                    [=](QMediaPlayer::State state) { qDebug() << "Player state:" << state; });
 #endif
-                qDebug() << "Player state:" << state;
-            });
 
             ui->stackedWidget->setCurrentIndex(1);
             ui->showlabel->setText("");  // 清除文本

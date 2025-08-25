@@ -27,3 +27,11 @@ if(USE_QTQML)
     target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Qml)
     target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Quick)
 endif(USE_QTQML)
+target_link_libraries(Aster
+    PRIVATE
+    $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+    $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)
+target_include_directories(Aster PRIVATE ${FFMPEG_INCLUDE_DIRS})
+target_link_directories(Aster PRIVATE ${FFMPEG_LIBRARY_DIRS})
+target_link_libraries(Aster PRIVATE ${FFMPEG_LIBRARIES})

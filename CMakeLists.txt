@@ -11,8 +11,13 @@ add_compile_definitions(AHRI_EXPORT)
 include(${PROJECT_SOURCE_DIR}/cmake/compiler.cmake)
 include(${PROJECT_SOURCE_DIR}/cmake/library.cmake)
 
-set(ROOT ${PROJECT_SOURCE_DIR})
-include_directories(${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)
+set(ASTER_ROOT ${PROJECT_SOURCE_DIR})
+include_directories(
+    ${PROJECT_SOURCE_DIR}
+    ${PROJECT_SOURCE_DIR}/include
+    ../Ceceilia
+    ../Ceceilia/include
+)
 
 ########################################################################################################################
 # options
@@ -23,6 +28,9 @@ option(Qt "build qt_learn subproject" ON)
 option(ImGui "build imgui_learn subproject" ON)
 option(OpenGL "build opengl_learn subproject" ON)
 
+########################################################################################################################
+# subprojects
+########################################################################################################################
 if(FFmpeg)
     if(FFMPEG_FOUND)
         add_subdirectory(ffmpeg_learn)

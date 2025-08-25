@@ -89,6 +89,12 @@ if(imgui_FOUND)
     set(USE_IMGUI true)
 endif(imgui_FOUND)
 
+find_package(OpenGL REQUIRED)
+# target_link_libraries(main PRIVATE OpenGL::GL)
+if(OpenGL_FOUND)
+    set(USE_OPENGL true)
+endif(OpenGL_FOUND)
+
 find_package(glad CONFIG)
 # target_link_libraries(main PRIVATE glad::glad)
 if(glad_FOUND)
@@ -100,3 +106,13 @@ find_package(glfw3 CONFIG)
 if(glfw3_FOUND)
     set(USE_GLFW3 true)
 endif(glfw3_FOUND)
+
+find_package(SDL2 CONFIG REQUIRED)
+# target_link_libraries(main
+#     PRIVATE
+#     $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+#     $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+# )
+if(SDL2_FOUND)
+    set(USE_SDL2 true)
+endif(SDL2_FOUND)

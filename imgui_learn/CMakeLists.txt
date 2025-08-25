@@ -1,2 +1,5 @@
 add_executable(imgui_main main.cpp)
 target_link_libraries(imgui_main PRIVATE imgui::imgui)
+target_link_libraries(imgui_main PRIVATE glfw glad::glad)
+target_link_libraries(imgui_main PRIVATE spdlog::spdlog)
+target_link_libraries(imgui_main PRIVATE opencv_core opencv_highgui opencv_imgproc)

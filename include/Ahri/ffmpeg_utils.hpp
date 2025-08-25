@@ -71,14 +71,38 @@ static char av_error[AV_ERROR_MAX_STRING_SIZE] = {0};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Media {
 public:
-    Media(const char* url) {
-        _context = avformat_alloc_context();
-        avformat_open_input(&_context, url, nullptr, nullptr);
-    }
+    Media() { _context = avformat_alloc_context(); }
     ~Media() { avformat_close_input(&_context); }
+
+    bool open(const char* url) {
+        // 打开输入文件
+        if (avformat_open_input(&_context, url, nullptr, nullptr) != 0) {
+            return false;
+        };
+
+        // 查找流信息
+        if (avformat_find_stream_info(_context, nullptr) < 0) {
+            return false;
+        }
+
+        // 查找视频流
+        for (uint8_t i = 0; i < _context->nb_streams; i++) {
+            if (_context->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) {
+                _video_stream_index = i;
+                break;
+            }
+        }
+
+        if (_video_stream_index == -1) {
+            return false;
+        }
+
+
+    }
 
 private:
     AVFormatContext* _context;
+    int _video_stream_index = -1;
 };
 }  // namespace Ahri::FFmpeg
 
