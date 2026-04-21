@@ -23,7 +23,6 @@ include_directories(
 # options
 ########################################################################################################################
 option(AsterQML "Aster project using QML" OFF)  # default is using widget
-option(FFmpeg "build ffmpeg_learn subproject" ON)
 option(Qt "build qt_learn subproject" ON)
 option(ImGui "build imgui_learn subproject" ON)
 option(OpenGL "build opengl_learn subproject" ON)
@@ -31,12 +30,6 @@ option(OpenGL "build opengl_learn subproject" ON)
 ########################################################################################################################
 # subprojects
 ########################################################################################################################
-if(FFmpeg)
-    if(FFMPEG_FOUND)
-        add_subdirectory(ffmpeg_learn)
-    endif(FFMPEG_FOUND)
-endif(FFmpeg)
-
 if(Qt)
     if(Qt${QT_VERSION_MAJOR}_FOUND)
         add_subdirectory(qt_learn)
