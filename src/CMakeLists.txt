@@ -23,10 +23,10 @@ target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
 target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Multimedia)
 target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::MultimediaWidgets)
-if(USE_QTQML)
+if(ASTER_USE_QTQML)
     target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Qml)
     target_link_libraries(Aster PRIVATE Qt${QT_VERSION_MAJOR}::Quick)
-endif(USE_QTQML)
+endif(ASTER_USE_QTQML)
 target_link_libraries(Aster
     PRIVATE
     $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>

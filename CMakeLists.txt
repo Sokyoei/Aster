@@ -5,6 +5,9 @@ project(Aster VERSION 0.0.1 LANGUAGES C CXX)
 set(CMAKE_C_STANDARD 17)
 set(CMAKE_CXX_STANDARD 20)
 
+# export compile_commands.json
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 add_compile_definitions(AHRI_EXPORT)
 # add_definitions(-DAHRI_EXPORT)
 
@@ -15,46 +18,28 @@ set(ASTER_ROOT ${PROJECT_SOURCE_DIR})
 include_directories(
     ${PROJECT_SOURCE_DIR}
     ${PROJECT_SOURCE_DIR}/include
-    ../Ceceilia
-    ../Ceceilia/include
+    ${PROJECT_SOURCE_DIR}/../Ceceilia/include
 )
 
 ########################################################################################################################
 # options
 ########################################################################################################################
-option(AsterQML "Aster project using QML" OFF)  # default is using widget
-option(Qt "build qt_learn subproject" ON)
-option(ImGui "build imgui_learn subproject" ON)
-option(OpenGL "build opengl_learn subproject" ON)
+option(AsterQML         "Aster project using QML"               OFF)  # default is using widget
+option(Qt               "enable QT"                              ON)
+option(ImGui            "enable ImGui"                          OFF)
+option(OpenGL           "enable OpenGL"                         OFF)
+option(DirectX          "enable DirectX"                        OFF)
 
 ########################################################################################################################
-# subprojects
+# Learning projects
 ########################################################################################################################
-if(Qt)
-    if(Qt${QT_VERSION_MAJOR}_FOUND)
-        add_subdirectory(qt_learn)
-    endif(Qt${QT_VERSION_MAJOR}_FOUND)
-endif(Qt)
-
-if(ImGui)
-    if(imgui_FOUND)
-        add_subdirectory(imgui_learn)
-    endif(imgui_FOUND)
-endif(ImGui)
-
-if(OpenGL)
-    if((glad_FOUND) AND (glfw3_FOUND))
-        add_subdirectory(opengl_learn)
-    endif((glad_FOUND) AND (glfw3_FOUND))
-endif(OpenGL)
-
-if(WIN32)
-    add_subdirectory(DirectX_learn)
-endif(WIN32)
+if(Learning)
+    add_subdirectory(learning)
+endif(Learning)
 
 # flags to use QML
 if(AsterQML)
-    set(USE_QTQML true)
+    set(ASTER_USE_QTQML true)
     set(QT_QML_GENERATE_QMLLS_INI ON)
 endif(AsterQML)
 add_subdirectory(src)
