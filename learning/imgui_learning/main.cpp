@@ -19,8 +19,8 @@
 #include <opencv2/opencv.hpp>
 
 #include "Ahri/Ceceilia/utils/logger_utils.hpp"
-#include "Ahri/imgui_utils.hpp"
-#include "Ahri/opengl_utils.hpp"
+#include "Aster/imgui_utils.hpp"
+#include "Aster/opengl_utils.hpp"
 
 namespace Ahri::IMGUI {
 class SettingsWindow;
