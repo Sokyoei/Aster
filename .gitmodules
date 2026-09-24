@@ -1,0 +1,3 @@
+[submodule "learning/directx_learning/DirectX-Graphics-Samples"]
+	path = learning/directx_learning/DirectX-Graphics-Samples
+	url = https://github.com/microsoft/DirectX-Graphics-Samples
