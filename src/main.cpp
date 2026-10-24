@@ -40,7 +40,7 @@ int main(int argc, char* argv[]) {
     // // 显示主窗口
     // window.show();
 
-    Ahri::Aster::MainWindow window;
+    Aster::MainWindow window;
     window.show();
 
 #else   //  Widgets+ui ^^^/vvv QtQuick+QML

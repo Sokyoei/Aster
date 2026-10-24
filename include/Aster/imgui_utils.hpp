@@ -7,8 +7,8 @@
  */
 
 #pragma once
-#ifndef AHRI_IMGUI_UTILS_HPP
-#define AHRI_IMGUI_UTILS_HPP
+#ifndef ASUKA_IMGUI_UTILS_HPP
+#define ASUKA_IMGUI_UTILS_HPP
 
 #include <glad/glad.h>
 // include glad first
@@ -17,7 +17,7 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 
-namespace Ahri::IMGUI {
+namespace Asuka::IMGUI {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Macros
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -138,6 +138,6 @@ struct ImGuiManager {
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     }
 };
-}  // namespace Ahri::IMGUI
+}  // namespace Asuka::IMGUI
 
-#endif  // !AHRI_IMGUI_UTILS_HPP
+#endif  // !ASUKA_IMGUI_UTILS_HPP

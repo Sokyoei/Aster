@@ -4,7 +4,7 @@
 
 #include <QStringList>
 
-namespace Ahri::Aster {
+namespace Aster {
 const QStringList picture_extensions = {
     "jpg",  "jpeg", "jfif",  // JPEG
     "png",                   // PNG
@@ -20,6 +20,6 @@ const QStringList video_extensions = {
     "mkv",                 // MKV
     "webm", "m4v"          //
 };
-}  // namespace Ahri::Aster
+}  // namespace Aster
 
 #endif  // !CONSTANTS_HPP

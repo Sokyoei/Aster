@@ -1,11 +1,11 @@
 #pragma once
-#ifndef AHRI_QT_UTILS_HPP
-#define AHRI_QT_UTILS_HPP
+#ifndef ASTER_QT_UTILS_HPP
+#define ASTER_QT_UTILS_HPP
 
 #include <QImage>
 #include <opencv2/opencv.hpp>
 
-namespace Ahri::Qt {
+namespace Asuka::Qt {
 inline cv::Mat QImage2cvMat(QImage& qimage) {
     cv::Mat mat;
     switch (qimage.format()) {
@@ -23,6 +23,6 @@ inline QImage cvMat2QImage(cv::Mat& mat) {
     cv::cvtColor(mat, mat, cv::COLOR_BGR2RGB);
     return QImage(mat.data, mat.cols, mat.rows, mat.step, QImage::Format_BGR888);
 }
-}  // namespace Ahri::Qt
+}  // namespace Asuka::Qt
 
-#endif  // !AHRI_QT_UTILS_HPP
+#endif  // !ASTER_QT_UTILS_HPP

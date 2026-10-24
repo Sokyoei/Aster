@@ -6,7 +6,7 @@
 #include <QImage>
 #include <opencv2/opencv.hpp>
 
-namespace Ahri::Aster {
+namespace Aster {
 class QtCamera : public QCamera {
 private:
 public:
@@ -15,6 +15,6 @@ public:
 };
 
 class IntelRealSenseCamera {};
-}  // namespace Ahri::Aster
+}  // namespace Aster
 
 #endif  // !CAMERA_HPP

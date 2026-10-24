@@ -7,16 +7,16 @@
  */
 
 #pragma once
-#ifndef AHRI_OPENGL_UTILS_HPP
-#define AHRI_OPENGL_UTILS_HPP
+#ifndef ASUKA_OPENGL_UTILS_HPP
+#define ASUKA_OPENGL_UTILS_HPP
 
 #include <glad/glad.h>
 // include glad first
 #include <GLFW/glfw3.h>
 
-#include "Ahri/Ceceilia/utils/logger_utils.hpp"
+#include "Ceceilia/utils/logger.hpp"
 
-namespace Ahri::OpenGL {
+namespace Asuka::OpenGL {
 /**
  * @brief GLFW error callback.
  * @param error Error code.
@@ -108,6 +108,6 @@ struct OpenGLContextManager {
      */
     void set_swap_interval(int interval) { glfwSwapInterval(interval); }
 };
-}  // namespace Ahri::OpenGL
+}  // namespace Asuka::OpenGL
 
-#endif  // !AHRI_OPENGL_UTILS_HPP
+#endif  // !ASUKA_OPENGL_UTILS_HPP

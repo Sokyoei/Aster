@@ -28,7 +28,7 @@ namespace Ui {
 class MainWindow;
 }
 
-namespace Ahri::Aster {
+namespace Aster {
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -55,6 +55,6 @@ private:
     QPoint mouse_pos;
     QMediaPlayer* meidaplayer{nullptr};
 };
-}  // namespace Ahri::Aster
+}  // namespace Aster
 
 #endif  // !MAINWINDOW_HPP
